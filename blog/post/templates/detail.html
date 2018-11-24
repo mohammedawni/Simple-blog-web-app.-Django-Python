@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="jumbotron banner">
+  <a class="btn btn-primary btn-lg" href="{% url "blog:edit_post" post.id %}" role="button">Edit post</a>
+  <a class="btn btn-primary btn-lg" href="{% url "blog:delete_post" post.id %}" role="button">Delete post</a>
+</div>
+           <div class="card single_post">
+             {% if post.img %}
+             <img class="card-img-top" src="{{post.img.url}}" alt="Card image cap">
+             {% endif %}
+             <div class="card-body">
+               <h5 class="card-title">{{post.title}}</h5>
+               <p class="card-text"> {{post.content|safe}}</p>
+             </div>
+           </div>
+         </div>
+
+           </div>
+{% endblock body %}
